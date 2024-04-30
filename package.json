@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "jquery": "^3.7.1",
+    "sass": "^1.72.0",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^11.1.0"
+  }
+}

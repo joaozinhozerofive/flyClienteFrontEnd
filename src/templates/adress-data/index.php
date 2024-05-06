@@ -52,7 +52,7 @@
         </div>
    </div>
 
-   <div id="div-wrapper-edit-adress">
+   <div id="div-wrapper-edit-adress" class="hidden">
     <div>
     <div class="div-header-form-adress">
         <h1>Informe um endereço válido</h1>

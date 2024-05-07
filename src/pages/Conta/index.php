@@ -79,6 +79,7 @@ function addMask() {
     addMaskBirth(); 
     addMaskCPF();
     addMaskPhone();
+    addMaskCEP();
 }
 
 function addMaskBirth() {
@@ -93,6 +94,9 @@ function addMaskPhone() {
     $("#phone").mask('(00) 00000-0000');
 }
 
+function addMaskCEP() {
+    $("#CEP").mask('00000-000');
+}
 
    function onClickBrand() {
     $(".brand-options").click(function(){

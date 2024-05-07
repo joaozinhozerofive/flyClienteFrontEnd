@@ -207,7 +207,7 @@ class Header {
          $optionsProfileHTML = '';
 
          foreach ($optionsProfile as $option) {
-            $optionRoute = $option->title == 'Sair' ? '' : $option->title;
+            $optionRoute = $option->title == 'Sair' ? 'auth' : $option->title;
             $optionsProfileHTML .= "
             <li>
             <a href = '/projeto_php/src/pages/$optionRoute'>

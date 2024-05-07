@@ -105,11 +105,16 @@
                 </div>
                
             </label>
-            <label>
-                País
-                <input type="text" id="country" value="Brasil" readonly>
-                UF
-                <input type="text" id="FU" placeholder="SC">
+            <label class="country-label">
+                <div>
+                    País
+                    <input type="text" id="country" value="Brasil" readonly>
+                </div>
+
+                <div>
+                    UF
+                <input type="text" id="FU" placeholder="SC" maxlength="3">
+                </div>
             </label>
 
             <label>
@@ -142,8 +147,8 @@
 
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
 <script>
 
@@ -152,9 +157,18 @@
             $('#payment-wrapper').removeClass('hidden');
         });
     }
+    
+    function addMask() {
+        addMaskCEP();
+    }
+
+    function addMaskCEP() {
+        $("#CEP").mask('00000-000');
+    }
 
     $(document).ready(() => {
         openPayment();
+        addMask();
     })
 
     function menuClick(){
@@ -373,12 +387,12 @@ body{
     max-width: 100%;
 }
 
-.adress-label {
+.adress-label, .country-label {
     display: flex;
     flex-direction: row;
 }
 
-.adress-label > div{
+.adress-label > div, .country-label > div{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -388,6 +402,13 @@ label.adress-label > div:nth-child(1){
     width: 100%;
 }
 label.adress-label > div:nth-child(2){
+    width: 30%;
+}
+
+label.country-label > div:nth-child(2){
+        width: 30%;
+    } 
+label.country-label > div:nth-child(2){
     width: 30%;
 }
 

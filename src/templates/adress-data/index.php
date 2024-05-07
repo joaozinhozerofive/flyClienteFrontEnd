@@ -62,7 +62,7 @@
 
             <label for="CEP">
                 CEP
-                <input type="text" id="CEP" placeholder="89160-306">
+                <input type="text" id="CEP"  placeholder="89160-306">
             </label>
             <label class="adress-label">
                 <div>
@@ -76,11 +76,16 @@
                 </div>
                
             </label>
-            <label>
-                País
-                <input type="text" id="country" value="Brasil" readonly>
-                UF
-                <input type="text" id="FU" placeholder="SC">
+            <label class="country-label">
+                <div>
+                    País
+                    <input type="text" id="country" value="Brasil" readonly>
+                </div>
+
+                <div>
+                    UF
+                <input type="text" id="FU" placeholder="SC" maxlength="3">
+                </div>
             </label>
 
             <label>
@@ -180,23 +185,33 @@
     max-width: 100%;
     }
 
-    .adress-label {
+    .adress-label, .country-label {
         display: flex;
         flex-direction: row;
     }
 
-    .adress-label > div{
+    .adress-label > div,.country-label > div {
         width: 100%;
         display: flex;
         flex-direction: column;
     }
 
-label.adress-label > div:nth-child(1){
-    width: 100%;
-}
-label.adress-label > div:nth-child(2){
-    width: 30%;
-}
+    label.adress-label > div:nth-child(1){
+        width: 100%;
+    }
+    label.adress-label > div:nth-child(2){
+        width: 30%;
+    }
+
+    label.label.adress-label > div:nth-child(1){
+        width: 100%;
+    }
+    label.country-label > div:nth-child(2){
+        width: 30%;
+    } 
+    label.country-label > div:nth-child(2){
+        width: 30%;
+    }
 
    
 

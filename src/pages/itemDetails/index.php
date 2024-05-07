@@ -32,27 +32,25 @@
 
 <main>
 
-<div class="brand">
-    <div class="brand-options active">
-        <i class="bi bi-person-circle"></i>
-        <p> Conta</p>
-    </div>
+        <div class="imgList">
+          <img src="../../../assets/images/bannerPadrao.avif" alt="Imagem exemplo">
+          <img src="../../../assets/images/bannerPadrao.avif" alt="Imagem exemplo">
+          <img src="../../../assets/images/bannerPadrao.avif" alt="Imagem exemplo">
+          <img src="../../../assets/images/bannerPadrao.avif" alt="Imagem exemplo">
+          <img src="../../../assets/images/bannerPadrao.avif" alt="Imagem exemplo">
+        </div>
 
-    <div class="brand-options">
-        <i class="bi bi-card-checklist"></i>
-        <p>Pedidos</p>
-    </div>
-    <div class="brand-options">
-        <i class="bi bi-house"></i>
-        <p>Endereços</p>
-    </div>
-</div>
+        <div class="infoItem">
+            <h1>Violino Proteron 5 Cordas Envernizado 4K Nylon</h1>
 
-<?php 
-$adressData  = require_once('../../templates/adress-data/index.php');
-$orderData   = require_once('../../templates/order-data/index.php');
-$userData    = require_once('../../templates/user-data/index.php');
-?>
+            <img src="../../../assets/images/bannerPadrao.avif" alt="Imagem exemplo">
+            <button>R$ 789,99 <i class="bi bi-cart-plus-fill"></i> </button>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus ad perspiciatis praesentium ea necessitatibus voluptas dignissimos!
+            Aut qui asperiores in odit, minima perspiciatis tempora. Consectetur assumenda at impedit ratione nihil.
+            </p>
+
+        </div>
 
 </main>
 
@@ -65,77 +63,13 @@ $userData    = require_once('../../templates/user-data/index.php');
 
 </body>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
  
-$(document).ready(function() {
-    onClickBrand();
-    addMask();
-   });
-
-function addMask() {
-    addMaskBirth(); 
-    addMaskCPF();
-    addMaskPhone();
-}
-
-function addMaskBirth() {
-    $("#birth").mask('00/00/0000');
-}
-
-function addMaskCPF() {
-    $("#CPF").mask('000.000.000-00');
-}
-
-function addMaskPhone() {
-    $("#phone").mask('(00) 00000-0000');
-}
-
-
-   function onClickBrand() {
-    $(".brand-options").click(function(){
-        let $this = $(this);
-        if(!$this.hasClass('active')){
-            let brandOptionsActive = $(".active");
-            brandOptionsActive.removeClass('active');
-            $this.addClass('active');
-            
-            let userData   = $(".user-data");
-            let orderData  = $(".order-data");
-            let adressData = $(".adress-data");
-            let pElement = $this.find('p');
-            let text = pElement.text().trim();
-            let containerActive = $('.container-active');
-
-            function alternateBrandOptions(element) {
-                containerActive.removeClass('container-active');
-                containerActive.addClass('hidden');
-                console.log(containerActive);
-                if(element.hasClass('hidden')) {
-                   element.removeClass('hidden')
-                }
-                element.addClass('container-active')
-            } 
-
-            switch(text){
-                case 'Conta': 
-                    alternateBrandOptions(userData);
-                    break;
-                case 'Pedidos': 
-                    alternateBrandOptions(orderData);
-                    break;
-                case 'Endereços':
-                    alternateBrandOptions(adressData);
-            }
-                        
-        }
-        
-    })
-   }
-
-
     function menuClick(){
      let menuButton =  $('#menuButton');
 
@@ -260,28 +194,59 @@ body{
     margin: 8rem 2rem 5rem 2rem;
 }
 
-main .brand{
-    max-height: 20rem;
-    width: 15rem;
-    max-width: 25%;
+.imgList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 35rem;
+    width: 30rem;
+    overflow-y: auto;
 }
 
+.imgList > img{
+    object-fit: cover;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+}
 
-.brand .brand-options{
+.infoItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 105rem;
+    max-width: 100%;
+    gap: 1rem;
+}
+
+.infoItem img{
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.infoItem > h1{
+    font-size: 80%;
+}
+.infoItem > p {
+    font-size: 50%;
+}
+.infoItem > button {
+    font-size: 60%;
+    width: 50%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 1rem;
-    width: 100%;
-    font-size: 60%;
-    padding: 1rem;
-    border-bottom: 1px solid #0a0f16;
+    text-align: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: #8b020d;
+    padding: 0.5rem;
+    border-radius: 0.8rem;
     cursor: pointer;
 }
 
-.brand  div:last-child{
-    border: none;
-}
 
 @media(max-width: 1024px){
     *{

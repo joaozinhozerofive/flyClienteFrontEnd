@@ -96,8 +96,8 @@
 
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
 <script>
     function menuClick(){
@@ -290,105 +290,115 @@ form button:hover {
 
 <script>
 
-function decrementQuantity() {
-    $('.card_item_container').find('.fa-minus').click(function() {
-        let $quantitySpan = $(this).closest('.card_item_container').find('#quantity');
-        
-        let currentValue = parseInt($quantitySpan.find('span').text());
-        
-        if(currentValue < 1) {
-            return;
-        }
-        let newValue = currentValue - 1;
+    function clickCardItemRedirection() {
+        $('img').click(() => {
+            window.location.href = 'http://localhost/projeto_php/src/pages/itemDetails';
+        })
+    }   
 
-        
+    function decrementQuantity() {
+        $('.card_item_container').find('.fa-minus').click(function() {
+            let $quantitySpan = $(this).closest('.card_item_container').find('#quantity');
+            
+            let currentValue = parseInt($quantitySpan.find('span').text());
+            
+            if(currentValue < 1) {
+                return;
+            }
+            let newValue = currentValue - 1;
 
-        $quantitySpan.find('span').text(newValue);
-    });
-}
+            
 
-function icrementQuantity() {
-    $('.card_item_container').find('.fa-plus').click(function() {
-        let $quantitySpan = $(this).closest('.card_item_container').find('#quantity');
-        
-        let currentValue = parseInt($quantitySpan.find('span').text());
-
-        let newValue = currentValue + 1;
-
-        $quantitySpan.find('span').text(newValue);
-    });
-}
-
-    function formatPrice(price) {
-    // Remove todos os caracteres que não são dígitos ou vírgula
-    price = price.replace(/[^\d,]/g, '');
-
-    // Separa os números antes e depois da vírgula
-    var parts = price.split(',');
-
-    // Formata a parte inteira do preço (antes da vírgula)
-    parts[0] = parts[0].replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-
-    // Se houver parte decimal, limita a parte decimal a apenas um dígito após a vírgula
-    if (parts[1]) {
-        parts[1] = parts[1].substr(0, 2);
+            $quantitySpan.find('span').text(newValue);
+        });
     }
 
-    // Junta as partes novamente e retorna o preço formatado, adicionando a vírgula
-    return parts.join(',');
-}
+    function icrementQuantity() {
+        $('.card_item_container').find('.fa-plus').click(function() {
+            let $quantitySpan = $(this).closest('.card_item_container').find('#quantity');
+            
+            let currentValue = parseInt($quantitySpan.find('span').text());
 
-function selectMarking(){
-    $('.marking p').click(function() {
-            //this busca o elemento que está sofrendo a ação.
-            let icon  = $this.find('i');
+            let newValue = currentValue + 1;
 
-            if(icon.hasClass('bi-plus')){
-                icon.css({
-                    'color': 'green',
-                })
-                $this.css({
-                    'color': 'green',
-                })
-                icon.removeClass('bi-plus');
-                icon.addClass('bi-check-lg');
-            }else{
-                icon.css({
-                    'color': 'white',
-                })
-                $this.css({
-                    'color': 'white',
-                })
-                icon.removeClass('bi-check-lg');
-                icon.addClass('bi-plus');
-                
-            }
-        })
-}
+            $quantitySpan.find('span').text(newValue);
+        });
+    }
 
-function addMaskInputPrice(){
-    $('.price').on('input', function() {
-        var value = $(this).val();
-        var formattedValue = formatPrice(value);
-        $(this).val(formattedValue);
-    });
-}
+        function formatPrice(price) {
+        // Remove todos os caracteres que não são dígitos ou vírgula
+        price = price.replace(/[^\d,]/g, '');
 
-function openAndCloseFilters() {
-        let filterForm = $('.filters');
+        // Separa os números antes e depois da vírgula
+        var parts = price.split(',');
 
-        if(filterForm.hasClass('hidden')){
-            filterForm.removeClass('hidden');
-        }else{
-            filterForm.addClass('hidden');
+        // Formata a parte inteira do preço (antes da vírgula)
+        parts[0] = parts[0].replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
+        // Se houver parte decimal, limita a parte decimal a apenas um dígito após a vírgula
+        if (parts[1]) {
+            parts[1] = parts[1].substr(0, 2);
         }
-}
 
-    $(document).ready(() => {
-        addMaskInputPrice();   
+        // Junta as partes novamente e retorna o preço formatado, adicionando a vírgula
+        return parts.join(',');
+    }
+
+    function selectMarking(){
+        $('.marking p').click(function() {
+                let $this = $(this); 
+                let icon  = $this.find('i');
+
+                if(icon.hasClass('bi-plus')){
+                    icon.css({
+                        'color': 'green',
+                    })
+                    $this.css({
+                        'color': 'green',
+                    })
+                    icon.removeClass('bi-plus');
+                    icon.addClass('bi-check-lg');
+                }else{
+                    icon.css({
+                        'color': 'white',
+                    })
+                    $this.css({
+                        'color': 'white',
+                    })
+                    icon.removeClass('bi-check-lg');
+                    icon.addClass('bi-plus');
+                    
+                }
+            })
+    }
+
+
+
+    function openAndCloseFilters() {
+            let filterForm = $('.filters');
+
+            if(filterForm.hasClass('hidden')){
+                filterForm.removeClass('hidden');
+            }else{
+                filterForm.addClass('hidden');
+            }
+    }
+
+    function addMaskPrice() {
+        $('.price').mask('R$ 000.000,00');
+    }
+
+    function addMask() {
+        addMaskPrice();
+    }
+
+
+    $(document).ready(function(){
         selectMarking();
+        addMask();
         decrementQuantity();
         icrementQuantity();
+        clickCardItemRedirection();
 
         $(".bi-funnel-fill").click(function() {
             openAndCloseFilters();

@@ -38,7 +38,7 @@ class Menu{
         
         <style>
             menu {
-                position: absloute;
+                position: fixed;
                 top: 8%;
                 display: flex;
                 flex-direction: column;

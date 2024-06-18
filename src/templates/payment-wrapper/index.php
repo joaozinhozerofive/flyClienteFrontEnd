@@ -200,7 +200,8 @@
     }
     
 </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
 <script>
     function handleClickPaymentForm() {
@@ -232,7 +233,26 @@
         })
     }
 
+    function setMaskInputs() {
+        setMaskInputCardCode();
+        setMaskInputHoldersCpf();
+        setMaskInputValidity();
+    }
+
+    function setMaskInputCardCode() {
+        $("#cardCode").mask('0000 0000 0000 0000 0000')
+    }
+
+    function setMaskInputHoldersCpf() {
+        $("#holders_cpf").mask('000.000.000-00')
+    }
+
+    function setMaskInputValidity() {
+        $("#validity").mask('00/00');
+    }
+
     $(document).ready(() => {
+        setMaskInputs();
 
         $('#close').click(() => {
             $("#payment-wrapper").addClass('hidden');

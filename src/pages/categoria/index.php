@@ -292,7 +292,7 @@ form button:hover {
 
     function clickCardItemRedirection() {
         $('img').click(() => {
-            window.location.href = 'http://localhost/projeto_php/src/pages/itemDetails';
+            window.location.href = 'http://localhost/fly-cliente-front-end/src/pages/itemDetails';
         })
     }   
 

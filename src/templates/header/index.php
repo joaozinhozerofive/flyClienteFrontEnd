@@ -176,14 +176,14 @@ class Header {
          foreach($categories as $category)  {
             $categoriesHTML .= "
                 <div class= 'subcategories'>
-                    <h1><a href = 'http://localhost/projeto_php/src/pages/categoria?id=5'>$category->title</a> </h1>
+                    <h1><a href = 'http://localhost/fly-cliente-front-end/src/pages/categoria?id=5'>$category->title</a> </h1>
             ";
 
                 $categoriesHTML .= "<div>";
 
                 foreach($category->subCategories as $subCategorie) {
                     $categoriesHTML .= "
-                    <p><a href = 'http://localhost/projeto_php/src/pages/categoria?id=5'>$subCategorie</a> </p>
+                    <p><a href = 'http://localhost/fly-cliente-front-end/src/pages/categoria?id=5'>$subCategorie</a> </p>
                     ";
                 }
 
@@ -210,7 +210,7 @@ class Header {
             $optionRoute = $option->title == 'Sair' ? 'auth' : $option->title;
             $optionsProfileHTML .= "
             <li>
-            <a href = '/projeto_php/src/pages/$optionRoute'>
+            <a href = '/fly-cliente-front-end/src/pages/$optionRoute'>
             $option->title
             </a>
             <i class='$option->class'>
@@ -236,7 +236,7 @@ class Header {
                     
                     <i class='bi bi-music-note'>
                     </i>
-                    <h1><a href ='http://localhost/projeto_php/src/pages/'>MusicFly</a></h1>
+                    <h1><a href ='http://localhost/fly-cliente-front-end/src/pages/'>MusicFly</a></h1>
                 </div>
                 <i class='bi bi-search bi-lg search'>
                     <input width='100%' type='text' placeholder='Pesquise por um produto...'>

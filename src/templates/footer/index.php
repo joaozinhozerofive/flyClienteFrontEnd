@@ -48,7 +48,9 @@ class Footer{
 
 <style>
 
-
+p {
+ cursor : pointer;
+}    
 
 .register-email{
     display: flex;

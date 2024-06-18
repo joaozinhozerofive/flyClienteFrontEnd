@@ -13,19 +13,19 @@ class Menu{
                 <main class='options'>
         
                        <p>
-                       <a href = 'http://localhost/projeto_php/src/pages/ajuda'>
+                       <a href = 'http://localhost/fly-cliente-front-end/src/pages/ajuda'>
                             Ajuda
                         </a>
                        </p>
 
                        <p>
-                       <a href = 'http://localhost/projeto_php/src/pages/sobrenos'>
+                       <a href = 'http://localhost/fly-cliente-front-end/src/pages/sobrenos'>
                             Sobre nós
                         </a>
                        </p>
         
                        <p>
-                       <a href = 'http://localhost/projeto_php/src/pages/contatos'>
+                       <a href = 'http://localhost/fly-cliente-front-end/src/pages/contatos'>
                         Contatos
                         </a>
                        </p>

@@ -12,7 +12,6 @@
     <div class="adress-list">
         <div>
             <div class="cotainer-row-adress">
-                <h1>Casa</h1>
                 <i class="bi bi-pencil"></i>
             </div>
 
@@ -22,7 +21,6 @@
         </div>
         <div>
             <div class="cotainer-row-adress">
-                <h1>Casa</h1>
                 <i class="bi bi-pencil"></i>
             </div>
 
@@ -32,7 +30,6 @@
         </div>
         <div>
             <div class="cotainer-row-adress">
-                <h1>Casa</h1>
                 <i class="bi bi-pencil"></i>
             </div>
 
@@ -42,7 +39,6 @@
         </div>
         <div>
             <div class="cotainer-row-adress">
-                <h1>Casa</h1>
                 <i class="bi bi-pencil"></i>
             </div>
 
@@ -135,13 +131,16 @@
 
     .cotainer-row-adress{
         font-size: 50%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
+        position: relative;
+    }
+
+    .bi-pencil {
+        position: absolute;
+        right: 0;
     }
 
     #div-wrapper-edit-adress {
+        margin: 50px 0 0 0;
         position: absolute;
         width: 100%;
         height: 100%;
@@ -258,7 +257,9 @@
 
     function openEditAdress() {
         $(".bi-pencil").click(() => {
-            $('#div-wrapper-edit-adress').css('display', 'block');
+            $('#div-wrapper-edit-adress').css({
+                display : 'block'
+            });
         });
     }
 

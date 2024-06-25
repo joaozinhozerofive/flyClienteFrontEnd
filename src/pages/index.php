@@ -44,8 +44,8 @@
     $overInfo->printHTML();
 
     #VITRINE HOME
-    $vitrineHome = new VitrineHome();
-    $vitrineHome->printHTML();
+    $showcase = new Showcase();
+    $showcase->printHTML();
 
     ?>
 

@@ -17,11 +17,11 @@ class OverInfo{
 
 <body>
 
-<div class='swiperInfo'>
+<div class='info-container'>
 
-  <div class='swiper-wrapperInfo'>
+  <div class='wrapper-info'>
 
-    <div class='swiper-slideInfo'>
+    <div class='info'>
         <span>
         <i class='bi bi-credit-card'>
         </i>
@@ -32,7 +32,7 @@ class OverInfo{
         </p>
     </div>
 
-    <div class='swiper-slideInfo'>
+    <div class='info'>
         <span>
         <i class='bi bi-phone-vibrate'>
         </i>
@@ -43,7 +43,7 @@ class OverInfo{
         </p>
     </div>
 
-    <div class='swiper-slideInfo'>
+    <div class='info'>
         <span>
         <i class='bi bi-truck'>
         </i>
@@ -60,20 +60,10 @@ class OverInfo{
 </div>
 
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
-<script src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js'></script>
-
-<script>
-
-const swiper = new Swiper('.swiper', {
-  direction: 'vertical',
-  loop: true,
-});
-
-</script>
 
 <style>
 
-.swiperInfo{
+.info-container{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -82,7 +72,7 @@ const swiper = new Swiper('.swiper', {
 
 }
 
-.swiper-wrapperInfo{
+.wrapper-info{
     width: 100%;
     padding: 0.8rem;
     display: flex;
@@ -93,7 +83,7 @@ const swiper = new Swiper('.swiper', {
     
 }
 
-.swiper-slideInfo{
+.info{
     display: flex;
     flex-direction: column;
     
@@ -101,12 +91,12 @@ const swiper = new Swiper('.swiper', {
     width: 100%;
     font-size: 45%;
 }
-.swiper-slideInfo span{
+.info span{
     display: flex;
     align-items: center;
     gap: 0.2rem;
 }
-.swiper-slideInfo p{
+.info p{
     font-size: 80%;
     white-space: nowrap;
 }

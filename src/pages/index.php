@@ -76,7 +76,116 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+
+
+<style>
+    *{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        border: none;
+        background: none;
+        
+        color: white;
+        
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: 120%;
+        
+    }
+    
+    ::-webkit-scrollbar{
+        width: 0.2rem;
+        height: 0.2rem;
+    }
+    ::-webkit-scrollbar-thumb{
+        background: black;
+        border-radius: 10rem;
+    }
+    
+    h1,h2,h3{
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    i{
+        cursor: pointer;
+    }
+    
+    body{
+        display: grid;
+        
+        grid-template-areas: 
+        "header header header"
+        "content content content"
+        ;
+        grid-template-rows: 5vh 95vh ;
+        grid-template-columns: 20% 80%;
+        background: rgb(0,10,15);
+        background: linear-gradient(90deg, rgb(2, 6, 8) 55%, rgb(1, 3, 6) 100%);
+        
+        overflow-y: auto;
+        overflow-x: hidden;
+        
+        width: 100vw;
+        height: 100vh;
+        
+        position: relative;
+    }
+    
+    .content{
+        grid-area: content;
+        height: 100%;
+        width: 100vw;
+        
+        overflow-y: auto;
+        overflow-x: hidden;
+        
+        padding-bottom: 2rem;
+    }
+    
+    .content .advertising{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        justify-content: center;
+        
+        margin: 2rem auto;
+        
+        gap: 0.5rem;
+    }
+    
+    .content .advertising img{
+    padding: 0.5rem;
+    margin: 0 auto;
+    width: 100%;
+    height: 10rem;
+    
+    object-fit: cover;
+}
+
+@media(max-width: 1024px){
+    *{
+        font-size: 115% ;
+    }
+}
+
+@media(max-width: 768px){
+    *{
+        font-size: 105% ;
+    }
+}
+
+@media(max-width: 500px){
+    *{
+        font-size: 100% ;
+    }
+}
+
+</style>
 <script>
+   const api = `http://localhost/fly-web-service/server/`;
+   
     function menuClick(){
      let menuButton =  $('#menuButton');
 
@@ -95,112 +204,5 @@
      }
     }
 </script>
-
-
-<style>
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    border: none;
-    background: none;
-
-    color: white;
-
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-size: 120%;
-
-}
-
-::-webkit-scrollbar{
-        width: 0.2rem;
-        height: 0.2rem;
-      }
-      ::-webkit-scrollbar-thumb{
-        background: black;
-        border-radius: 10rem;
-}
-
-h1,h2,h3{
-    font-family: 'Poppins', sans-serif;
-}
-
-i{
-    cursor: pointer;
-}
-
-body{
-   display: grid;
-
-   grid-template-areas: 
-   "header header header"
-   "content content content"
-   ;
-    grid-template-rows: 5vh 95vh ;
-    grid-template-columns: 20% 80%;
-    background: rgb(0,10,15);
-    background: linear-gradient(90deg, rgb(2, 6, 8) 55%, rgb(1, 3, 6) 100%);
-
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    width: 100vw;
-    height: 100vh;
-
-    position: relative;
-}
-
-.content{
-    grid-area: content;
-    height: 100%;
-    width: 100vw;
-
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    padding-bottom: 2rem;
-}
-
-.content .advertising{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    justify-content: center;
-
-    margin: 2rem auto;
-
-    gap: 0.5rem;
-}
-
-.content .advertising img{
-    padding: 0.5rem;
-    margin: 0 auto;
-    width: 100%;
-    height: 10rem;
-
-    object-fit: cover;
-}
-
-@media(max-width: 1024px){
-    *{
-          font-size: 115% ;
-    }
-}
-
-@media(max-width: 768px){
-    *{
-          font-size: 105% ;
-    }
-}
-
-@media(max-width: 500px){
-    *{
-          font-size: 100% ;
-    }
-}
-
-</style>
 
 </html>

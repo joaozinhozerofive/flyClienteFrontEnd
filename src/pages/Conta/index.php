@@ -116,7 +116,6 @@ function addMaskCEP() {
             function alternateBrandOptions(element) {
                 containerActive.removeClass('container-active');
                 containerActive.addClass('hidden');
-                console.log(containerActive);
                 if(element.hasClass('hidden')) {
                    element.removeClass('hidden')
                 }

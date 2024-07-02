@@ -21,188 +21,17 @@ class Header {
          $optionsProfile = [
             (object) [
                  'title'   => 'Conta', 
-                 'class'  => 'bi bi-person-circle option', 
+                 'class'   => 'bi bi-person-circle option', 
              ], 
             (object) [
                  'title'   => 'Carrinho', 
-                 'class'  => 'bi bi-cart option', 
+                 'class'   => 'bi bi-cart option', 
              ], 
             (object) [
                  'title'   => 'Sair', 
-                 'class'  => 'bi bi-box-arrow-right option', 
+                 'class'   => 'bi bi-box-arrow-right option', 
              ]
          ];
-         $biggestCategories = [
-            'Cordas',
-            'Áudio e tecnologia', 
-            'Baterias e percussão', 
-            'Teclas', 
-            'Sopros', 
-            'Kids',
-         ];
-
-         $categories  = [
-            (object)[
-                'title'          => 'Madeira', 
-                'subCategories'  => [
-                    'Violão',
-                    'Guitarra', 
-                    'Baixo', 
-                    'Cavaco', 
-                ] 
-            ], 
-            (object)[
-                'title'          => 'Madeira', 
-                'subCategories'  => [
-                    'Violão',
-                    'Guitarra', 
-                    'Baixo', 
-                    'Cavaco', 
-                ] 
-            ], 
-            (object)[
-                'title'          => 'Madeira', 
-                'subCategories'  => [
-                    'Violão',
-                    'Guitarra', 
-                    'Baixo', 
-                    'Cavaco', 
-                ] 
-            ], 
-            (object)[
-                'title'          => 'Madeira', 
-                'subCategories'  => [
-                    'Violão',
-                    'Guitarra', 
-                    'Baixo', 
-                    'Cavaco', 
-                ] 
-            ], 
-            (object)[
-                'title'          => 'Madeira', 
-                'subCategories'  => [
-                    'Violão',
-                    'Guitarra', 
-                    'Baixo', 
-                    'Cavaco', 
-                ] 
-            ], 
-            (object)[
-                'title'          => 'Madeira', 
-                'subCategories'  => [
-                    'Violão',
-                    'Guitarra', 
-                    'Baixo', 
-                    'Cavaco', 
-                ] 
-            ], 
-            (object)[
-                'title'          => 'Madeira', 
-                'subCategories'  => [
-                    'Violão',
-                    'Guitarra', 
-                    'Baixo', 
-                    'Cavaco', 
-                ] 
-            ], 
-            (object)[
-                'title'          => 'Madeira', 
-                'subCategories'  => [
-                    'Violão',
-                    'Guitarra', 
-                    'Baixo', 
-                    'Cavaco', 
-                ] 
-            ], 
-            (object)[
-                'title'          => 'Madeira', 
-                'subCategories'  => [
-                    'Violão',
-                    'Guitarra', 
-                    'Baixo', 
-                    'Cavaco', 
-                ] 
-            ], 
-            (object)[
-                'title'          => 'Madeira', 
-                'subCategories'  => [
-                    'Violão',
-                    'Guitarra', 
-                    'Baixo', 
-                    'Cavaco', 
-                ] 
-            ], 
-            (object)[
-                'title'          => 'Madeira', 
-                'subCategories'  => [
-                    'Violão',
-                    'Guitarra', 
-                    'Baixo', 
-                    'Cavaco', 
-                ] 
-            ], 
-            (object)[
-                'title'          => 'Madeira', 
-                'subCategories'  => [
-                    'Violão',
-                    'Guitarra', 
-                    'Baixo', 
-                    'Cavaco', 
-                ] 
-            ], 
-            (object)[
-                'title'          => 'Madeira', 
-                'subCategories'  => [
-                    'Violão',
-                    'Guitarra', 
-                    'Baixo', 
-                    'Cavaco', 
-                ] 
-            ], 
-            (object)[
-                'title'          => 'Madeira', 
-                'subCategories'  => [
-                    'Violão',
-                    'Guitarra', 
-                    'Baixo', 
-                    'Cavaco', 
-                ] 
-            ], 
-        ];
-
-
-         $categoriesHTML  = '';
-
-         foreach($categories as $category)  {
-            $categoriesHTML .= "
-                <div class= 'subcategories'>
-                    <h1><a href = 'http://localhost/fly-cliente-front-end/src/pages/categoria?id=5'>$category->title</a> </h1>
-            ";
-
-                $categoriesHTML .= "<div>";
-
-                foreach($category->subCategories as $subCategorie) {
-                    $categoriesHTML .= "
-                    <p><a href = 'http://localhost/fly-cliente-front-end/src/pages/categoria?id=5'>$subCategorie</a> </p>
-                    ";
-                }
-
-                $categoriesHTML .= "</div>";
-
-
-                $categoriesHTML .= "</div>";
-         }
-
-         $biggestCategoriesHTML = '';
-
-         foreach($biggestCategories as $biggestCategory) {
-            $biggestCategoriesHTML .= "
-            <div  class='category'>
-              <p> $biggestCategory </p>  
-              <i class='bi bi-chevron-down'></i>
-            </div>
-            ";
-         }
 
          $optionsProfileHTML = '';
 
@@ -218,7 +47,7 @@ class Header {
             </li>";
         }
 
-        echo "
+?>
         <!DOCTYPE html>
         <html lang='pt-br'>
         <head>
@@ -265,15 +94,32 @@ class Header {
 
                 <div class = 'div-container-categories'>
 
-                $biggestCategoriesHTML
+                    <div  class='category'>
+                        <p> testando </p>  
+                        <i class='bi bi-chevron-down'></i>
+                    </div>
+                    <div  class='category'>
+                        <p> testando </p>  
+                        <i class='bi bi-chevron-down'></i>
+                    </div>
+                    <div  class='category'>
+                        <p> testando </p>  
+                        <i class='bi bi-chevron-down'></i>
+                    </div>
 
                 </div>
 
-                <div id = 'div-container-subcategories' class = 'div-container-subcategories hidden'> 
+                        <div id = 'div-container-subcategories' class = 'div-container-subcategories hidden'> 
 
-                $categoriesHTML
+                            <div class= 'subcategories'>
+                                <h1><a href = 'http://localhost/fly-cliente-front-end/src/pages/categoria?id=5'>test</a> </h1>
+                            
+                                <div> 
+                                    <p><a href = 'http://localhost/fly-cliente-front-end/src/pages/categoria?id=5'>test</a> </p>
+                                </div> 
+                            </div>   
 
-                </div>
+                        </div>
             </div>
         </div>
             <style>
@@ -621,6 +467,22 @@ class Header {
             <script src='./comportamentos.js'></script>
 
             <script>
+            $(() => {
+                getDataCategories()
+            })
+
+            async function getDataCategories() {
+                let response =  await fetch(`${api}categories/show`, {
+                    method : 'GET'
+                });
+                
+                let data = await response.json();  
+                insertDataCategoriesOnPage(data);
+            }
+
+            function insertDataCategoriesOnPage(data) {
+                console.log(data);
+            }
 
             $(document).ready(function() {
                 $('.category').mouseenter(function() {
@@ -660,8 +522,9 @@ class Header {
 
             </script>    
         </html>
-        ";
+<?php
     }
+    
 }
 ?>
 
